@@ -7,7 +7,7 @@ import org.apache.kafka.common.serialization.Serializer;
 import java.nio.ByteBuffer;
 import java.util.Map;
 
-public class AmountWasDepositedSerializer implements Serializer<AmountWasDepositedEvent> {
+public class AmountWasDepositedEventSerializer implements Serializer<AmountWasDepositedEvent> {
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {
         Serializer.super.configure(configs, isKey);

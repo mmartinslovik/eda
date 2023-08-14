@@ -3,7 +3,6 @@ package com.example.atm.rest;
 import com.example.atm.command.DepositAmountCommand;
 import com.example.atm.constants.KafkaContants;
 import com.example.atm.event.AmountWasDepositedEvent;
-import com.example.atm.event.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AtmController {
 
     private static final Logger logger = LoggerFactory.getLogger(AtmController.class);
-    private final KafkaTemplate<String, Event> kafkaTemplate;
+    private final KafkaTemplate<String, AmountWasDepositedEvent> kafkaTemplate;
 
     @Autowired
-    public AtmController(KafkaTemplate<String, Event> kafkaTemplate) {
+    public AtmController(KafkaTemplate<String, AmountWasDepositedEvent> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
